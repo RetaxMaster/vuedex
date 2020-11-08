@@ -1,12 +1,38 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mount } from '@vue/test-utils'
+import App from '@/App.vue'
+import {huevo, espinaca} from  "./jestTest";
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+const wrapper = mount(App)
+const vm = wrapper.vm
+
+describe('Se probará la calidad de los productos', ()=>{
+
+	test('Calidad del huevo', ()  => {
+
+    expect(huevo().estado[0]).toBe('fresco')
+
+  });
+
+  test('Calidad de la espinaca', ()  => {
+    
+    expect(espinaca()).toEqual({
+      estado: 1,
+      color: "verde"
     })
-    expect(wrapper.text()).toMatch(msg)
+
+  });
+
+}); 
+
+describe('Probar que se cambió la propiedad changeTest ', () => {
+
+  test('should click a button', () => {
+
+    const lastValue = vm.changeTest
+    wrapper.find('button').trigger('click')
+
+    expect(vm.changeTest).toBe(lastValue+1)
+
   })
+
 })

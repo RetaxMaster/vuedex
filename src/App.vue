@@ -41,7 +41,8 @@ export default {
       weight: 0,	
       height: 0,
       abilities: [],
-      data: {}
+      data: {},
+      changeTest: 0
     }
   },
   computed: {
@@ -73,6 +74,7 @@ export default {
   },**/
   
   setData(data) {
+    this.changeTest += 1;
     try {
       let randomSearch = Math.floor(Math.random()*3)
       data = data.mock[randomSearch].data
