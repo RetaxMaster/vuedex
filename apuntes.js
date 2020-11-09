@@ -62,3 +62,10 @@ find()
 
 // Lanza un evento del elemento que se seleccionó. Recibe un string con el nombre del evento.
 trigger()
+
+
+/* Este método nos permite esperar al cambio de la aplicación.
+Regresa una promesa, por lo cual debemos esperar a que se resuelva la promesa.
+Se debe de tratar como método asíncrono.
+No recibe parámetros, sino más bien un callback. */
+$nextTick
