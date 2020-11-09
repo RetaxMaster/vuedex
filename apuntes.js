@@ -51,6 +51,12 @@ expect(coso).toBe(valorEsperado)
 // toEqual Compara recursivamente los valores de las propiedades de la instancia del objeto enviado (esto se le conoce como “deep equality”). Utiliza de igual manera la función Object.is para hacer las validaciones.
 expect(coso).toEqual(valorEsperado)
 
+// Este matcher recibe un número que significará el número de validaciones que se van a hacer dentro de esta prueba. Cuando estemos trabajando con código asíncrono, debemos poder ver si se está llamando o no a nuestra validación.
+expect.assertions()
+
+// Regresa el valor que salió del resolve_ _de la promesa.
+expect(Promise.resolve(promesa)).resolves
+
 // Recibe un string o un componente y regresa el primer elemento que encuentra con ese selector.
 find()
 

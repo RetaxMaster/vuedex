@@ -1,3 +1,5 @@
+// Este archivo junto a jestTest.js debería estar en test/unit pero lo sacamos a la raíz para que no moleste con las demás pruebas
+
 import { mount } from '@vue/test-utils'
 import App from '@/App.vue'
 import {huevo, espinaca} from  "./jestTest";
